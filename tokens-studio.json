@@ -1427,7 +1427,40 @@
       }
     }
   },
-  "$themes": [],
+  "$themes": [
+    {
+      "id": "light",
+      "name": "Light",
+      "group": "Mode",
+      "selectedTokenSets": {
+        "global": "source",
+        "Semantic Spacing /Mode 1": "source",
+        "Typography/Mode 1": "source",
+        "Semantic Colors /Light": "enabled",
+        "Semantic Colors /Dark": "disabled",
+        "Semantic Colors /Light/Semantic Colors /Light": "disabled",
+        "Semantic Colors /Dark/Semantic Colors /Dark": "disabled",
+        "Semantic Spacing /Mode 1/Semantic Spacing /Mode 1": "disabled",
+        "Typography/Mode 1/Typography/Mode 1": "disabled"
+      }
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "group": "Mode",
+      "selectedTokenSets": {
+        "global": "source",
+        "Semantic Spacing /Mode 1": "source",
+        "Typography/Mode 1": "source",
+        "Semantic Colors /Light": "disabled",
+        "Semantic Colors /Dark": "enabled",
+        "Semantic Colors /Light/Semantic Colors /Light": "disabled",
+        "Semantic Colors /Dark/Semantic Colors /Dark": "disabled",
+        "Semantic Spacing /Mode 1/Semantic Spacing /Mode 1": "disabled",
+        "Typography/Mode 1/Typography/Mode 1": "disabled"
+      }
+    }
+  ],
   "$metadata": {
     "tokenSetOrder": [
       "global",

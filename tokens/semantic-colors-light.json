@@ -1,0 +1,501 @@
+{
+  "surface": {
+    "bg-base": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#ffffff",
+      "subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "color",
+        "$value": "#f0f7ff"
+      }
+    },
+    "bg-subtle": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#d2e6ff",
+      "subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "color",
+        "$value": "#e1efff"
+      }
+    }
+  },
+  "brand": {
+    "primary": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#379ee6",
+      "subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "color",
+        "$value": "#285c9f"
+      }
+    },
+    "secondary": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#0f2d52"
+    },
+    "82BBFF": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#82bbff"
+    },
+    "primary-2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#1e4b85"
+    }
+  },
+  "text": {
+    "primary": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#000000"
+    }
+  },
+  "color": {
+    "444444": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#444444"
+    },
+    "0096FF": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#0096ff"
+    },
+    "681ABB": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#681abb"
+    },
+    "F2F2F2": {
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "color",
+      "$value": "#f2f2f2"
+    }
+  },
+  "fontFamilies": {
+    "recipekorea": {
+      "$type": "fontFamilies",
+      "$value": "Recipekorea"
+    },
+    "pretendard": {
+      "$type": "fontFamilies",
+      "$value": "Pretendard"
+    }
+  },
+  "lineHeights": {
+    "0": {
+      "$type": "lineHeights",
+      "$value": "130%"
+    },
+    "1": {
+      "$type": "lineHeights",
+      "$value": "110%"
+    },
+    "2": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "3": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "4": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "5": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "6": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "7": {
+      "$type": "lineHeights",
+      "$value": "AUTO"
+    },
+    "8": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "9": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "10": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "11": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    },
+    "12": {
+      "$type": "lineHeights",
+      "$value": "150%"
+    }
+  },
+  "fontWeights": {
+    "recipekorea-0": {
+      "$type": "fontWeights",
+      "$value": "Medium"
+    },
+    "pretendard-1": {
+      "$type": "fontWeights",
+      "$value": "Bold"
+    },
+    "pretendard-2": {
+      "$type": "fontWeights",
+      "$value": "Regular"
+    },
+    "pretendard-3": {
+      "$type": "fontWeights",
+      "$value": "SemiBold"
+    },
+    "pretendard-4": {
+      "$type": "fontWeights",
+      "$value": "Medium"
+    }
+  },
+  "fontSize": {
+    "0": {
+      "$type": "fontSizes",
+      "$value": 17
+    },
+    "1": {
+      "$type": "fontSizes",
+      "$value": 20
+    },
+    "2": {
+      "$type": "fontSizes",
+      "$value": 24
+    },
+    "3": {
+      "$type": "fontSizes",
+      "$value": 28
+    },
+    "4": {
+      "$type": "fontSizes",
+      "$value": 32
+    },
+    "5": {
+      "$type": "fontSizes",
+      "$value": 42
+    },
+    "6": {
+      "$type": "fontSizes",
+      "$value": 50
+    },
+    "7": {
+      "$type": "fontSizes",
+      "$value": 83
+    }
+  },
+  "letterSpacing": {
+    "0": {
+      "$type": "letterSpacing",
+      "$value": "-1.5%"
+    },
+    "1": {
+      "$type": "letterSpacing",
+      "$value": "-2%"
+    },
+    "2": {
+      "$type": "letterSpacing",
+      "$value": "0%"
+    }
+  },
+  "paragraphSpacing": {
+    "0": {
+      "$type": "paragraphSpacing",
+      "$value": 0
+    }
+  },
+  "heading": {
+    "title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.recipekorea}",
+        "fontWeight": "{fontWeights.recipekorea-0}",
+        "lineHeight": "{lineHeights.0}",
+        "fontSize": "{fontSize.7}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "원본 폰트: Recipekorea Medium 83px"
+    },
+    "subtitle": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.recipekorea}",
+        "fontWeight": "{fontWeights.recipekorea-0}",
+        "lineHeight": "{lineHeights.1}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.1}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "원본 폰트: Recipekorea Medium 32px"
+    },
+    "bold-50": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-1}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.6}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "regular-32": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-2}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "bold-32": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-1}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "bold-32-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-3}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "medium-32": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-4}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    }
+  },
+  "label": {
+    "badge": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.recipekorea}",
+        "fontWeight": "{fontWeights.recipekorea-0}",
+        "lineHeight": "{lineHeights.7}",
+        "fontSize": "{fontSize.5}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "원본 폰트: Recipekorea Medium 42px"
+    }
+  },
+  "body": {
+    "medium-17": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-4}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "medium-20": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-4}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    }
+  },
+  "title": {
+    "regular-24": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-2}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.2}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "bold-24": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-1}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.2}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "bold-28": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.pretendard}",
+        "fontWeight": "{fontWeights.pretendard-1}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.3}",
+        "letterSpacing": "{letterSpacing.2}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    }
+  },
+  "textCase": {
+    "none": {
+      "$type": "textCase",
+      "$value": "none"
+    }
+  },
+  "textDecoration": {
+    "none": {
+      "$type": "textDecoration",
+      "$value": "none"
+    }
+  },
+  "paragraphIndent": {
+    "0": {
+      "$type": "dimension",
+      "$value": "0px"
+    }
+  }
+}

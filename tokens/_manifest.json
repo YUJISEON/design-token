@@ -1,0 +1,11 @@
+{
+  "global": "global.json",
+  "Semantic Colors /Light": "semantic-colors-light.json",
+  "Semantic Colors /Dark": "semantic-colors-dark.json",
+  "Semantic Spacing /Mode 1": "semantic-spacing-mode-1.json",
+  "Typography/Mode 1": "typography-mode-1.json",
+  "Semantic Colors /Light/Semantic Colors /Light": "semantic-colors-light-semantic-colors-light.json",
+  "Semantic Colors /Dark/Semantic Colors /Dark": "semantic-colors-dark-semantic-colors-dark.json",
+  "Semantic Spacing /Mode 1/Semantic Spacing /Mode 1": "semantic-spacing-mode-1-semantic-spacing-mode-1.json",
+  "Typography/Mode 1/Typography/Mode 1": "typography-mode-1-typography-mode-1.json"
+}
