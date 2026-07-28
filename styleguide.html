@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Style Guide</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /*
+   * Page chrome only. All colors and spacing below come from tokens.css
+   * custom properties — nothing here is a hardcoded design value.
+   * Figma's original spacing (24/32/48px …) doesn't exist in our 5px-step
+   * scale, so each layout gap below uses the closest available --space-*.
+   */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; /* no typography tokens yet — system stack only */
+    background-color: var(--color-bg-default);
+    color: var(--color-text-primary);
+  }
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-80);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-80);
+  }
+  .intro h1 {
+    margin: 0 0 var(--space-15);
+    font-size: 40px;
+    color: var(--color-text-primary);
+  }
+  .intro p {
+    margin: 0;
+    max-width: 640px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+  .section-head { margin-bottom: var(--space-30); }
+  .section-head h2 {
+    margin: 0 0 var(--space-10);
+    font-size: 22px;
+    color: var(--color-text-primary);
+  }
+  .section-head p {
+    margin: 0 0 var(--space-15);
+    color: var(--color-text-secondary);
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-border-subtle);
+    margin: 0;
+  }
+  .subgroup-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-15);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .subgroup + .subgroup { margin-top: var(--space-30); }
+
+  .swatch-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-25);
+  }
+  .swatch-card {
+    width: 200px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    padding: var(--space-15);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+  }
+  .swatch-box {
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .swatch-name { font-size: 14px; font-weight: 600; margin: 0; }
+  .swatch-var { font-size: 12px; margin: 0; font-family: ui-monospace, monospace; color: var(--color-text-secondary); }
+  .warn-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: var(--space-5);
+  }
+
+  .space-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-15);
+    padding: var(--space-10) 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .space-row:last-child { border-bottom: none; }
+  .space-name {
+    width: 140px;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .space-bar-track {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-15);
+  }
+  .space-bar {
+    height: 20px;
+    border-radius: 4px;
+    background-color: var(--color-interactive-accent-default);
+  }
+  .space-value { font-size: 13px; color: var(--color-text-secondary); font-family: ui-monospace, monospace; }
+
+  .status-card {
+    padding: var(--space-15);
+    border-radius: 8px;
+    width: 220px;
+  }
+  .status-card p { margin: 0; }
+  .status-card .status-name { font-weight: 700; margin-bottom: var(--space-5); }
+  .status-card .status-sample { font-size: 13px; }
+
+  .interactive-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-25);
+    flex-wrap: wrap;
+  }
+  button.interactive-accent {
+    padding: var(--space-10) var(--space-20);
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .interactive-note { font-size: 13px; color: var(--color-text-secondary); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-40);
+    border-top: 1px solid var(--color-border-subtle);
+    font-size: 13px;
+  }
+
+  .primitive-row {
+    display: flex;
+    gap: var(--space-10);
+  }
+  .primitive-swatch {
+    flex: 1;
+    height: 70px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-5);
+    font-family: ui-monospace, monospace;
+  }
+  .primitive-swatch .shade { font-size: 12px; font-weight: 700; }
+  .primitive-swatch .hex { font-size: 10px; opacity: 0.85; }
+  .primitive-base-row { display: flex; gap: var(--space-10); }
+  .primitive-base-swatch {
+    width: 140px;
+    height: 70px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-5);
+    font-family: ui-monospace, monospace;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="intro">
+    <h1>Design System Style Guide</h1>
+    <p>tokens.css에 정의된 semantic 컬러 토큰과 spacing 토큰을 실제 유틸리티 클래스로 확인하는 문서입니다. (타이포그래피 토큰은 아직 정의되지 않아 이번 가이드에서 생략합니다.)</p>
+  </div>
+
+  <!-- 1. Primitive Color Palette -->
+  <section>
+    <div class="section-head">
+      <h2>1. Primitive Color Palette</h2>
+      <p>tokens-studio.json의 global 색상 스케일 원본입니다. semantic 토큰은 전부 이 값들을 var()로 참조합니다.</p>
+      <hr class="divider">
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Base</p>
+      <div class="primitive-base-row">
+        <div class="primitive-base-swatch" style="background-color:var(--color-black); color:var(--color-text-inverse);">
+          <span class="shade">black</span><span class="hex">#000000</span>
+        </div>
+        <div class="primitive-base-swatch" style="background-color:var(--color-white); color:var(--color-text-primary); border:1px solid var(--color-border-default);">
+          <span class="shade">white</span><span class="hex">#ffffff</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Gray</p>
+      <div class="primitive-row">
+        <div class="primitive-swatch" style="background-color:var(--color-gray-100); color:var(--color-text-primary);"><span class="shade">100</span><span class="hex">#fdfdfd</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-200); color:var(--color-text-primary);"><span class="shade">200</span><span class="hex">#fbfbfb</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-300); color:var(--color-text-primary);"><span class="shade">300</span><span class="hex">#f9f9f9</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-400); color:var(--color-text-primary);"><span class="shade">400</span><span class="hex">#f7f7f7</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-500); color:var(--color-text-primary);"><span class="shade">500</span><span class="hex">#f5f5f5</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-600); color:var(--color-text-inverse);"><span class="shade">600</span><span class="hex">#c4c4c4</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-700); color:var(--color-text-inverse);"><span class="shade">700</span><span class="hex">#939393</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-800); color:var(--color-text-inverse);"><span class="shade">800</span><span class="hex">#626262</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-gray-900); color:var(--color-text-inverse);"><span class="shade">900</span><span class="hex">#313131</span></div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Blue</p>
+      <div class="primitive-row">
+        <div class="primitive-swatch" style="background-color:var(--color-blue-100); color:var(--color-text-primary);"><span class="shade">100</span><span class="hex">#cce3ff</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-200); color:var(--color-text-primary);"><span class="shade">200</span><span class="hex">#99c8ff</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-300); color:var(--color-text-primary);"><span class="shade">300</span><span class="hex">#66acff</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-400); color:var(--color-text-primary);"><span class="shade">400</span><span class="hex">#3391ff</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-500); color:var(--color-text-primary);"><span class="shade">500</span><span class="hex">#0075ff</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-600); color:var(--color-text-inverse);"><span class="shade">600</span><span class="hex">#005ecc</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-700); color:var(--color-text-inverse);"><span class="shade">700</span><span class="hex">#004699</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-800); color:var(--color-text-inverse);"><span class="shade">800</span><span class="hex">#002f66</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-blue-900); color:var(--color-text-inverse);"><span class="shade">900</span><span class="hex">#001733</span></div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Red</p>
+      <div class="primitive-row">
+        <div class="primitive-swatch" style="background-color:var(--color-red-100); color:var(--color-text-primary);"><span class="shade">100</span><span class="hex">#f9d1cc</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-200); color:var(--color-text-primary);"><span class="shade">200</span><span class="hex">#f3a399</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-300); color:var(--color-text-primary);"><span class="shade">300</span><span class="hex">#ed7566</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-400); color:var(--color-text-inverse);"><span class="shade">400</span><span class="hex">#e74733</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-500); color:var(--color-text-inverse);"><span class="shade">500</span><span class="hex">#e11900</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-600); color:var(--color-text-inverse);"><span class="shade">600</span><span class="hex">#b41400</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-700); color:var(--color-text-inverse);"><span class="shade">700</span><span class="hex">#870f00</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-800); color:var(--color-text-inverse);"><span class="shade">800</span><span class="hex">#5a0a00</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-red-900); color:var(--color-text-inverse);"><span class="shade">900</span><span class="hex">#2d0500</span></div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Yellow</p>
+      <div class="primitive-row">
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-100); color:var(--color-text-primary);"><span class="shade">100</span><span class="hex">#fff2d9</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-200); color:var(--color-text-primary);"><span class="shade">200</span><span class="hex">#ffe6b4</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-300); color:var(--color-text-primary);"><span class="shade">300</span><span class="hex">#ffd98e</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-400); color:var(--color-text-primary);"><span class="shade">400</span><span class="hex">#ffcd69</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-500); color:var(--color-text-primary);"><span class="shade">500</span><span class="hex">#ffc043</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-600); color:var(--color-text-primary);"><span class="shade">600</span><span class="hex">#cc9a36</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-700); color:var(--color-text-inverse);"><span class="shade">700</span><span class="hex">#997328</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-800); color:var(--color-text-inverse);"><span class="shade">800</span><span class="hex">#664d1b</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-yellow-900); color:var(--color-text-inverse);"><span class="shade">900</span><span class="hex">#33260d</span></div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Green</p>
+      <div class="primitive-row">
+        <div class="primitive-swatch" style="background-color:var(--color-green-100); color:var(--color-text-primary);"><span class="shade">100</span><span class="hex">#cde7da</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-200); color:var(--color-text-primary);"><span class="shade">200</span><span class="hex">#9bcfb6</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-300); color:var(--color-text-primary);"><span class="shade">300</span><span class="hex">#68b891</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-400); color:var(--color-text-primary);"><span class="shade">400</span><span class="hex">#36a06d</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-500); color:var(--color-text-inverse);"><span class="shade">500</span><span class="hex">#048848</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-600); color:var(--color-text-inverse);"><span class="shade">600</span><span class="hex">#036d3a</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-700); color:var(--color-text-inverse);"><span class="shade">700</span><span class="hex">#02522b</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-800); color:var(--color-text-inverse);"><span class="shade">800</span><span class="hex">#02361d</span></div>
+        <div class="primitive-swatch" style="background-color:var(--color-green-900); color:var(--color-text-inverse);"><span class="shade">900</span><span class="hex">#011b0e</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Semantic Color Palette -->
+  <section>
+    <div class="section-head">
+      <h2>2. Semantic Color Palette</h2>
+      <p>용도(background / text / border / status / interactive)에 따라 분류된 semantic 토큰입니다. 각 값은 tokens.css의 유틸리티 클래스를 그대로 사용합니다.</p>
+      <hr class="divider">
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Background</p>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-box bg-default border-default" style="border-width:1px;border-style:solid;"></div>
+          <p class="swatch-name">bg-default</p>
+          <p class="swatch-var">--color-bg-default</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"></div>
+          <p class="swatch-name">bg-subtle</p>
+          <p class="swatch-var">--color-bg-subtle</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-muted"></div>
+          <p class="swatch-name">bg-muted</p>
+          <p class="swatch-var">--color-bg-muted</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-inverse"></div>
+          <p class="swatch-name">bg-inverse</p>
+          <p class="swatch-var">--color-bg-inverse</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-inverse" style="position:relative;">
+            <div class="bg-overlay" style="position:absolute;inset:0;border-radius:8px;"></div>
+          </div>
+          <p class="swatch-name">bg-overlay</p>
+          <p class="swatch-var">--color-bg-overlay</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Text</p>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"><span class="text-primary" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-primary</p>
+          <p class="swatch-var">--color-text-primary</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"><span class="text-secondary" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-secondary</p>
+          <p class="swatch-var">--color-text-secondary</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"><span class="text-tertiary" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-tertiary <span class="warn-tag status-warning" style="padding:0 4px;border-radius:4px;">⚠ 3.07:1</span></p>
+          <p class="swatch-var">--color-text-tertiary</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"><span class="text-disabled" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-disabled <span class="warn-tag status-warning" style="padding:0 4px;border-radius:4px;">⚠ 1.74:1</span></p>
+          <p class="swatch-var">--color-text-disabled</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-inverse"><span class="text-inverse" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-inverse</p>
+          <p class="swatch-var">--color-text-inverse</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box bg-subtle"><span class="text-link" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-link</p>
+          <p class="swatch-var">--color-text-link</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color:var(--color-interactive-accent-default);"><span class="text-on-accent" style="font-size:28px;font-weight:700;">Aa</span></div>
+          <p class="swatch-name">text-on-accent</p>
+          <p class="swatch-var">--color-text-on-accent</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Border</p>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-box border-default" style="border-width:3px;border-style:solid;"></div>
+          <p class="swatch-name">border-default</p>
+          <p class="swatch-var">--color-border-default</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box border-subtle" style="border-width:3px;border-style:solid;"></div>
+          <p class="swatch-name">border-subtle <span class="warn-tag status-warning" style="padding:0 4px;border-radius:4px;">⚠ 1.09:1</span></p>
+          <p class="swatch-var">--color-border-subtle</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box border-strong" style="border-width:3px;border-style:solid;"></div>
+          <p class="swatch-name">border-strong</p>
+          <p class="swatch-var">--color-border-strong</p>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-box" style="border:3px solid var(--color-border-focus);"></div>
+          <p class="swatch-name">border-focus</p>
+          <p class="swatch-var">--color-border-focus</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Status (bg + text + border composite)</p>
+      <div class="swatch-grid">
+        <div class="status-card status-success">
+          <p class="status-name">Success</p>
+          <p class="status-sample">.status-success</p>
+        </div>
+        <div class="status-card status-warning">
+          <p class="status-name">Warning</p>
+          <p class="status-sample">.status-warning</p>
+        </div>
+        <div class="status-card status-error">
+          <p class="status-name">Error</p>
+          <p class="status-sample">.status-error</p>
+        </div>
+        <div class="status-card status-info">
+          <p class="status-name">Info</p>
+          <p class="status-sample">.status-info</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <p class="subgroup-title">Interactive</p>
+      <div class="interactive-row">
+        <button class="interactive-accent">Confirm</button>
+        <button class="interactive-accent" disabled>Confirm</button>
+        <span class="interactive-note">버튼 위에 마우스를 올리거나 클릭하면 hover / active 상태(--color-interactive-accent-hover / -active)를 실시간으로 확인할 수 있습니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Spacing -->
+  <section>
+    <div class="section-head">
+      <h2>3. Spacing</h2>
+      <p>tokens.css의 --space-* 스케일입니다 (base 5px 단위 등차수열). 모든 바 너비는 var()로 참조합니다.</p>
+      <hr class="divider">
+    </div>
+    <div>
+      <div class="space-row">
+        <p class="space-name">--space-base</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-base);"></div><span class="space-value">5px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-10</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-10);"></div><span class="space-value">10px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-15</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-15);"></div><span class="space-value">15px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-20</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-20);"></div><span class="space-value">20px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-25</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-25);"></div><span class="space-value">25px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-30</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-30);"></div><span class="space-value">30px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-35</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-35);"></div><span class="space-value">35px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-40</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-40);"></div><span class="space-value">40px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-45</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-45);"></div><span class="space-value">45px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-50</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-50);"></div><span class="space-value">50px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-55</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-55);"></div><span class="space-value">55px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-60</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-60);"></div><span class="space-value">60px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-65</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-65);"></div><span class="space-value">65px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-70</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-70);"></div><span class="space-value">70px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-75</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-75);"></div><span class="space-value">75px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-80</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-80);"></div><span class="space-value">80px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-85</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-85);"></div><span class="space-value">85px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-90</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-90);"></div><span class="space-value">90px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-95</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-95);"></div><span class="space-value">95px</span></div>
+      </div>
+      <div class="space-row">
+        <p class="space-name">--space-100</p>
+        <div class="space-bar-track"><div class="space-bar" style="width:var(--space-100);"></div><span class="space-value">100px</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Generated from tokens.css</span>
+    <span class="text-link">Typography section omitted — no typography tokens defined yet</span>
+  </footer>
+
+</div>
+</body>
+</html>

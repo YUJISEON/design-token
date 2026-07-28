@@ -1,0 +1,240 @@
+/**
+ * Design Tokens
+ * Source: tokens-studio.json (global set only — light/dark sets omitted per spec)
+ */
+
+:root {
+  /* ==========================================================
+   * Primitive tokens — raw color scales from tokens-studio.json > global
+   * ========================================================== */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-gray-100: #fdfdfd;
+  --color-gray-200: #fbfbfb;
+  --color-gray-300: #f9f9f9;
+  --color-gray-400: #f7f7f7;
+  --color-gray-500: #f5f5f5;
+  --color-gray-600: #c4c4c4;
+  --color-gray-700: #939393;
+  --color-gray-800: #626262;
+  --color-gray-900: #313131;
+
+  --color-blue-100: #cce3ff;
+  --color-blue-200: #99c8ff;
+  --color-blue-300: #66acff;
+  --color-blue-400: #3391ff;
+  --color-blue-500: #0075ff;
+  --color-blue-600: #005ecc;
+  --color-blue-700: #004699;
+  --color-blue-800: #002f66;
+  --color-blue-900: #001733;
+
+  --color-red-100: #f9d1cc;
+  --color-red-200: #f3a399;
+  --color-red-300: #ed7566;
+  --color-red-400: #e74733;
+  --color-red-500: #e11900;
+  --color-red-600: #b41400;
+  --color-red-700: #870f00;
+  --color-red-800: #5a0a00;
+  --color-red-900: #2d0500;
+
+  --color-yellow-100: #fff2d9;
+  --color-yellow-200: #ffe6b4;
+  --color-yellow-300: #ffd98e;
+  --color-yellow-400: #ffcd69;
+  --color-yellow-500: #ffc043;
+  --color-yellow-600: #cc9a36;
+  --color-yellow-700: #997328;
+  --color-yellow-800: #664d1b;
+  --color-yellow-900: #33260d;
+
+  --color-green-100: #cde7da;
+  --color-green-200: #9bcfb6;
+  --color-green-300: #68b891;
+  --color-green-400: #36a06d;
+  --color-green-500: #048848;
+  --color-green-600: #036d3a;
+  --color-green-700: #02522b;
+  --color-green-800: #02361d;
+  --color-green-900: #011b0e;
+
+  /* ==========================================================
+   * Primitive tokens — spacing scale from tokens-studio.json > global.spacing
+   * Mirrors the JSON's own formula chain (spacing.N = spacing.(N-5) + baseSpacing),
+   * so every step after --space-base is a var() reference, never a literal px.
+   * ========================================================== */
+  --space-base: 5px;
+  --space-10: calc(var(--space-base) * 2);
+  --space-15: calc(var(--space-10) + var(--space-base));
+  --space-20: calc(var(--space-15) + var(--space-base));
+  --space-25: calc(var(--space-20) + var(--space-base));
+  --space-30: calc(var(--space-25) + var(--space-base));
+  --space-35: calc(var(--space-30) + var(--space-base));
+  --space-40: calc(var(--space-35) + var(--space-base));
+  --space-45: calc(var(--space-40) + var(--space-base));
+  --space-50: calc(var(--space-45) + var(--space-base));
+  --space-55: calc(var(--space-50) + var(--space-base));
+  --space-60: calc(var(--space-55) + var(--space-base));
+  --space-65: calc(var(--space-60) + var(--space-base));
+  --space-70: calc(var(--space-65) + var(--space-base));
+  --space-75: calc(var(--space-70) + var(--space-base));
+  --space-80: calc(var(--space-75) + var(--space-base));
+  --space-85: calc(var(--space-80) + var(--space-base));
+  --space-90: calc(var(--space-85) + var(--space-base));
+  --space-95: calc(var(--space-90) + var(--space-base));
+  --space-100: calc(var(--space-95) + var(--space-base));
+
+  /* ==========================================================
+   * Semantic tokens — background
+   * Contrast ratios below are checked against --color-bg-default (white)
+   * unless noted otherwise. Background tokens are non-text; no 4.5:1
+   * requirement applies to them.
+   * ========================================================== */
+  --color-bg-default: var(--color-white);
+  --color-bg-subtle: var(--color-gray-100);
+  --color-bg-muted: var(--color-gray-300);
+  --color-bg-inverse: var(--color-black);
+  --color-bg-overlay: color-mix(in srgb, var(--color-black) 50%, transparent);
+
+  /* ==========================================================
+   * Semantic tokens — text
+   * WCAG AA requires >= 4.5:1 for normal text. Ratio vs. its typical
+   * background is noted per token; entries below 4.5:1 are flagged.
+   * ========================================================== */
+  --color-text-primary: var(--color-black);          /* vs bg-default: 21:1 ✅ */
+  --color-text-secondary: var(--color-gray-800);      /* vs bg-default: 6.10:1 ✅ */
+  --color-text-tertiary: var(--color-gray-700);       /* vs bg-default: 3.07:1 ⚠️ FAILS 4.5:1 — use only for large/bold text (>=18px) or decorative labels, not body copy */
+  --color-text-disabled: var(--color-gray-600);       /* vs bg-default: 1.74:1 ⚠️ FAILS 4.5:1 — acceptable only because WCAG exempts disabled controls from contrast requirements; never reuse for enabled text */
+  --color-text-inverse: var(--color-white);           /* vs bg-inverse: 21:1 ✅ */
+  --color-text-link: var(--color-blue-600);           /* vs bg-default: 6.05:1 ✅ */
+  --color-text-on-accent: var(--color-white);         /* vs interactive-accent-default: 6.05:1 ✅ */
+
+  /* ==========================================================
+   * Semantic tokens — border
+   * Borders are non-text UI components; WCAG 1.4.11 target is >= 3:1.
+   * ========================================================== */
+  --color-border-default: var(--color-gray-700);      /* vs bg-default: 3.07:1 ✅ (meets 3:1 non-text minimum) */
+  --color-border-subtle: var(--color-gray-500);        /* vs bg-default: 1.09:1 ⚠️ FAILS 3:1 — decorative hairline only, do not use to convey a meaningful boundary */
+  --color-border-strong: var(--color-gray-900);       /* vs bg-default: 13.01:1 ✅ */
+  --color-border-focus: var(--color-blue-500);        /* vs bg-default: 4.21:1 ✅ (exceeds 3:1 focus-indicator minimum) */
+
+  /* ==========================================================
+   * Semantic tokens — status (success / warning / error / info)
+   * Each *-text is checked against both its own *-bg and bg-default.
+   * Each *-border targets the 3:1 non-text minimum against bg-default.
+   * ========================================================== */
+  --color-status-success-bg: var(--color-green-100);
+  --color-status-success-text: var(--color-green-600); /* vs success-bg: 4.93:1 ✅ · vs bg-default: 6.46:1 ✅ */
+  --color-status-success-border: var(--color-green-400); /* vs bg-default: 3.28:1 ✅ */
+
+  --color-status-warning-bg: var(--color-yellow-100);
+  --color-status-warning-text: var(--color-yellow-800); /* vs warning-bg: 7.17:1 ✅ · vs bg-default: 7.94:1 ✅ (yellow-700 was tried first but only reaches 4.34:1, below 4.5:1 — bumped to 800) */
+  --color-status-warning-border: var(--color-yellow-700); /* vs bg-default: 4.34:1 ✅ */
+
+  --color-status-error-bg: var(--color-red-100);
+  --color-status-error-text: var(--color-red-600);     /* vs error-bg: 4.94:1 ✅ · vs bg-default: 6.91:1 ✅ */
+  --color-status-error-border: var(--color-red-400);   /* vs bg-default: 3.93:1 ✅ */
+
+  --color-status-info-bg: var(--color-blue-100);
+  --color-status-info-text: var(--color-blue-600);     /* vs info-bg: 4.61:1 ✅ · vs bg-default: 6.05:1 ✅ */
+  --color-status-info-border: var(--color-blue-400);   /* vs bg-default: 3.17:1 ✅ */
+
+  /* ==========================================================
+   * Semantic tokens — interactive
+   * ========================================================== */
+  --color-interactive-accent-default: var(--color-blue-600); /* text-on-accent vs this: 6.05:1 ✅ */
+  --color-interactive-accent-hover: var(--color-blue-700);    /* text-on-accent vs this: 8.98:1 ✅ */
+  --color-interactive-accent-active: var(--color-blue-800);  /* text-on-accent vs this: 13.14:1 ✅ */
+  --color-interactive-disabled: var(--color-gray-600);        /* vs bg-default: 1.74:1 ⚠️ intentionally low — disabled state is WCAG-exempt from contrast */
+}
+
+/* ==============================================================
+ * Utility classes — 1:1 mapping to semantic tokens
+ * ============================================================== */
+
+/* background */
+.bg-default   { background-color: var(--color-bg-default); }
+.bg-subtle    { background-color: var(--color-bg-subtle); }
+.bg-muted     { background-color: var(--color-bg-muted); }
+.bg-inverse   { background-color: var(--color-bg-inverse); }
+.bg-overlay   { background-color: var(--color-bg-overlay); }
+
+/* text */
+.text-primary    { color: var(--color-text-primary); }
+.text-secondary  { color: var(--color-text-secondary); }
+.text-tertiary   { color: var(--color-text-tertiary); }   /* ⚠️ see contrast warning above */
+.text-disabled   { color: var(--color-text-disabled); }   /* ⚠️ see contrast warning above */
+.text-inverse    { color: var(--color-text-inverse); }
+.text-link       { color: var(--color-text-link); }
+.text-on-accent  { color: var(--color-text-on-accent); }
+
+/* border */
+.border-default { border: 1px solid var(--color-border-default); }
+.border-subtle  { border: 1px solid var(--color-border-subtle); } /* ⚠️ decorative only, see warning above */
+.border-strong  { border: 1px solid var(--color-border-strong); }
+.border-focus   { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }
+
+/* status — composite bg + text + border in one class */
+.status-success {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success-text);
+  border: 1px solid var(--color-status-success-border);
+}
+.status-warning {
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning-text);
+  border: 1px solid var(--color-status-warning-border);
+}
+.status-error {
+  background-color: var(--color-status-error-bg);
+  color: var(--color-status-error-text);
+  border: 1px solid var(--color-status-error-border);
+}
+.status-info {
+  background-color: var(--color-status-info-bg);
+  color: var(--color-status-info-text);
+  border: 1px solid var(--color-status-info-border);
+}
+
+/* interactive */
+.interactive-accent {
+  background-color: var(--color-interactive-accent-default);
+  color: var(--color-text-on-accent);
+}
+.interactive-accent:hover  { background-color: var(--color-interactive-accent-hover); }
+.interactive-accent:active { background-color: var(--color-interactive-accent-active); }
+.interactive-accent:disabled,
+.interactive-accent[disabled] {
+  background-color: var(--color-interactive-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ==============================================================
+ * Usage examples (reference only — not applied automatically)
+ *
+ * <!-- Button -->
+ * <button class="interactive-accent" style="padding:8px 16px; border:none; border-radius:4px;">
+ *   Confirm
+ * </button>
+ * <button class="interactive-accent" disabled style="padding:8px 16px; border:none; border-radius:4px;">
+ *   Confirm
+ * </button>
+ *
+ * <!-- Notification / alert -->
+ * <div class="status-error" style="padding:12px 16px; border-radius:4px;">
+ *   <strong>Error:</strong> Something went wrong. Please try again.
+ * </div>
+ * <div class="status-success" style="padding:12px 16px; border-radius:4px;">
+ *   <strong>Success:</strong> Your changes have been saved.
+ * </div>
+ *
+ * <!-- Card -->
+ * <div class="bg-default border-default" style="padding:16px; border-radius:8px;">
+ *   <h3 class="text-primary" style="margin:0 0 4px;">Card title</h3>
+ *   <p class="text-secondary" style="margin:0 0 8px;">Supporting description text.</p>
+ *   <a class="text-link" href="#">Read more</a>
+ * </div>
+ * ============================================================== */

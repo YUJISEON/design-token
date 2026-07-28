@@ -385,12 +385,172 @@
       }
     }
   },
+  "semantic": {
+    "background": {
+      "default": {
+        "$type": "color",
+        "$value": "{white}"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{gray.100}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{gray.300}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{black}"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{black}",
+        "$extensions": {
+          "studio.tokens": {
+            "modify": {
+              "type": "alpha",
+              "value": "0.5",
+              "space": "srgb"
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{black}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{gray.800}"
+      },
+      "tertiary": {
+        "$type": "color",
+        "$value": "{gray.700}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{gray.600}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{white}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{blue.600}"
+      },
+      "onAccent": {
+        "$type": "color",
+        "$value": "{white}"
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "color",
+        "$value": "{gray.700}"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{gray.500}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{gray.900}"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "{blue.500}"
+      }
+    },
+    "status": {
+      "success": {
+        "bg": {
+          "$type": "color",
+          "$value": "{green.100}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{green.600}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{green.400}"
+        }
+      },
+      "warning": {
+        "bg": {
+          "$type": "color",
+          "$value": "{yellow.100}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{yellow.800}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{yellow.700}"
+        }
+      },
+      "error": {
+        "bg": {
+          "$type": "color",
+          "$value": "{red.100}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{red.600}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{red.400}"
+        }
+      },
+      "info": {
+        "bg": {
+          "$type": "color",
+          "$value": "{blue.100}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{blue.600}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{blue.400}"
+        }
+      }
+    },
+    "interactive": {
+      "accent": {
+        "default": {
+          "$type": "color",
+          "$value": "{blue.600}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{blue.700}"
+        },
+        "active": {
+          "$type": "color",
+          "$value": "{blue.800}"
+        }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{gray.600}"
+      }
+    }
+  },
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": [
       "global",
       "light",
-      "dark"
+      "dark",
+      "semantic"
     ]
   }
 }
